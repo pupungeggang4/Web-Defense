@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                touch-action: none;
+                overscroll-behavior: none;
+            }
+            #screen {
+                border: 2px solid black;
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                max-width: 96%;
+                max-height: 96%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="screen" width="1280" height="720"></canvas>
+        <script src="data/unit.json" type="text/javascript"></script>
+        <script src="script/asset.js"></script>
+        <script src="script/ui.js"></script>
+
+        <script src="script/shape.js"></script>
+        <script src="script/entity/entity.js"></script>
+        <script src="script/entity/unit.js"></script>
+        <script src="script/entity/tower.js"></script>
+
+        <script src="script/field.js"></script>
+        <script src="script/func.js"></script>
+        <script src="script/render.js"></script>
+        <script src="script/game.js"></script>
+
+        <script src="script/scenetitle.js"></script>
+        <script src="script/scenebattle.js"></script>
+
+        <script src="script/main.js"></script>
+    </body>
+</html>
