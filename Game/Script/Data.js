@@ -1,7 +1,0 @@
-const dataCard = {
-
-}
-
-const dataLevel = {
-
-}
