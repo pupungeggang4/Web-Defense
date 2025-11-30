@@ -5,6 +5,7 @@ class Game {
 
         this.canvas = document.getElementById('screen')
         this.ctx = this.canvas.getContext('2d')
+        this.ctx.imageSmoothingEnabled = false;
 
         this.canvas.addEventListener('mouseup', (event) => this.mouseUp(event), false)
         this.frameCurrent = 0; this.framePrevious = 0; this.delta = 0;
