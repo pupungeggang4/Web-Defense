@@ -1,13 +1,10 @@
 class Img {
     static loadPair = [['player', 'image/player.png', '']]
-    static img = {
-        card: {}
-    }
+    static card = {} 
 }
 
 class Aud {
     static loadPair = [['main', 'audio/main.wav', '']]
-    static aud = {}
 }
 
 class AssetManager {
@@ -19,9 +16,9 @@ class AssetManager {
             let img = new Image()
             img.src = pair[1]
             if (pair[2] == 'card') {
-                Img.img.card[pair[0]] = img
+                Img.card[pair[0]] = img
             } else {
-                Img.img[pair[0]] = img
+                Img[pair[0]] = img
             }
             img.onload = () => {
                 AssetManager.numLoaded++
@@ -40,7 +37,7 @@ class AssetManager {
             let pair = Aud.loadPair[i]
             let aud = new Audio()
             aud.src = pair[1]
-            Aud.aud[pair[0]] = aud
+            Aud[pair[0]] = aud
             aud.addEventListener('canplaythrough', function() { 
                 AssetManager.numLoaded++
                 if (AssetManager.numLoaded >= Img.loadPair.length + Aud.loadPair.length) {
