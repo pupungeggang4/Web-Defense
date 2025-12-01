@@ -8,6 +8,14 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
+    static renderLowerUI(ctx, game) {
+        Render.strokeRectUI(ctx, UI.battle.buttonUpgrade)
+        for (let i = 0; i < 6; i++) {
+            let rect = [UI.battle.cardStart[0] + UI.battle.cardInterval[0] * i, UI.battle.cardStart[1], UI.battle.cardSize[0], UI.battle.cardSize[1]]
+            Render.strokeRectUI(ctx, rect)
+        }
+    }
+
     static renderMenu(ctx) {
         ctx.fillStyle = 'white'
         Render.fillRectUI(ctx, UI.menu.rect)
@@ -41,5 +49,13 @@ class Render {
 
     static fillRectUI(ctx, rect) {
         ctx.fillRect(rect[0], rect[1], rect[2], rect[3])
+    }
+
+    static drawImageUI(ctx, img, pos) {
+        ctx.fillRect(img, pos[0], pos[1])
+    }
+
+    static drawImageSizeUI(ctx, img, rect) {
+        ctx.fillRect(img, rect[0], rect[1], rect[2], rect[3])
     }
 }

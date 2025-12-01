@@ -7,12 +7,22 @@ class UI {
         textCollection: [180, 260],
     }
 
+    static window = {
+        rect: [],
+        textTitle: [],
+        buttonItem: [],
+        buttonOK: [],
+        textOK: []
+    }
+
     static battle = {
         buttonMenu: [1180, 20, 80, 80],
-        buttonUpgrade: [],
-        textUpgrade: [],
-        cardStart: [],
-        cardInterval: [],
+        buttonUpgrade: [20, 580, 120, 120],
+        textUpgrade: [24, 584],
+        cardStart: [160, 580],
+        cardText: [164, 584],
+        cardSize: [120, 120],
+        cardInterval: [120, 120],
     }
 
     static menu = {

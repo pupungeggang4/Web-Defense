@@ -14,6 +14,8 @@ class SceneBattle {
         Render.fillCanvas(game.canvas, ctx)
         Render.strokeRectUI(ctx, UI.battle.buttonMenu)
 
+        game.field.render(game)
+        Render.renderLowerUI(ctx, game)
         if (game.menu === true) {
             Render.renderMenu(ctx)
         }
@@ -28,7 +30,7 @@ class SceneBattle {
             } else if (game.menu === true) {
                 if (Func.pointInsideRectUI(pos, UI.battle.buttonMenu) || Func.pointInsideRectUI(pos, UI.menu.buttonResume)) {
                     game.menu = false
-                } else if (Func.pointInsideRectUI(pos, UI.battle.buttonExit)) {
+                } else if (Func.pointInsideRectUI(pos, UI.menu.buttonExit)) {
                     game.scene = new SceneTitle(game)
                 }
             }
