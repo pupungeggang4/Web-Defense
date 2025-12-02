@@ -1,10 +1,16 @@
 class Img {
-    static loadPair = [['player', 'image/player.png', '']]
-    static card = {} 
+    static loadPair = [
+        ['player', 'image/player.png', ''],
+        ['tempproj', 'image/tempproj.png', ''],
+        ['temptile', 'image/temptile.png', ''],
+        ['iconlife', 'image/iconlife.png', ''],
+        ['iconenergy', 'image/iconenergy.png', '']
+    ]
+    static card = {}
 }
 
 class Aud {
-    static loadPair = [['main', 'audio/main.wav', '']]
+    static loadPair = []
 }
 
 class AssetManager {

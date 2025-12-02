@@ -8,7 +8,23 @@ class Render {
         ctx.fillStyle = 'black'
     }
 
+    static renderStartWindow(ctx, game) {
+        ctx.fillStyle = 'white'
+        Render.fillRectUI(ctx, UI.window.rect)
+        Render.strokeRectUI(ctx, UI.window.rect)
+        ctx.fillStyle = 'black'
+
+        Render.fillTextUI(ctx, 'Choose start deck', UI.window.textTitle)
+        Render.strokeRectUI(ctx, UI.window.buttonOK)
+        Render.fillTextUI(ctx, 'OK', UI.window.textOK)
+    }
+
     static renderLowerUI(ctx, game) {
+        Render.fillTextUI(ctx, 'Lv.1', UI.battle.textLevel)
+        Render.drawImageUI(ctx, Img.iconenergy, UI.battle.iconEnergy)
+        Render.fillTextUI(ctx, '0.0/0.0', UI.battle.textEnergy)
+        Render.drawImageUI(ctx, Img.iconlife, UI.battle.iconLife)
+        Render.fillTextUI(ctx, '20', UI.battle.textLife)
         Render.strokeRectUI(ctx, UI.battle.buttonUpgrade)
         for (let i = 0; i < 6; i++) {
             let rect = [UI.battle.cardStart[0] + UI.battle.cardInterval[0] * i, UI.battle.cardStart[1], UI.battle.cardSize[0], UI.battle.cardSize[1]]
@@ -52,10 +68,10 @@ class Render {
     }
 
     static drawImageUI(ctx, img, pos) {
-        ctx.fillRect(img, pos[0], pos[1])
+        ctx.drawImage(img, pos[0], pos[1])
     }
 
     static drawImageSizeUI(ctx, img, rect) {
-        ctx.fillRect(img, rect[0], rect[1], rect[2], rect[3])
+        ctx.drawImage(img, rect[0], rect[1], rect[2], rect[3])
     }
 }

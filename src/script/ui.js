@@ -8,15 +8,20 @@ class UI {
     }
 
     static window = {
-        rect: [],
-        textTitle: [],
+        rect: [160, 40, 960, 640],
+        textTitle: [180, 60],
         buttonItem: [],
-        buttonOK: [],
-        textOK: []
+        buttonOK: [560, 560, 160, 80],
+        textOK: [580, 580]
     }
 
     static battle = {
         buttonMenu: [1180, 20, 80, 80],
+        textLevel: [24, 544],
+        iconEnergy: [160, 540],
+        textEnergy: [204, 544],
+        iconLife: [400, 540],
+        textLife: [444, 544],
         buttonUpgrade: [20, 580, 120, 120],
         textUpgrade: [24, 584],
         cardStart: [160, 580],

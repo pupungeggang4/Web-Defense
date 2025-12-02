@@ -14,8 +14,14 @@ class SceneBattle {
         Render.fillCanvas(game.canvas, ctx)
         Render.strokeRectUI(ctx, UI.battle.buttonMenu)
 
+
         game.field.render(game)
         Render.renderLowerUI(ctx, game)
+        
+        if (game.state === 'start') {
+            Render.renderStartWindow(ctx, game)
+        }
+
         if (game.menu === true) {
             Render.renderMenu(ctx)
         }
@@ -27,6 +33,10 @@ class SceneBattle {
                 if (Func.pointInsideRectUI(pos, UI.battle.buttonMenu)) {
                     game.menu = true
                 }
+
+                if (game.state === 'start') {
+                    this.mouseUpStart(game, pos)
+                }
             } else if (game.menu === true) {
                 if (Func.pointInsideRectUI(pos, UI.battle.buttonMenu) || Func.pointInsideRectUI(pos, UI.menu.buttonResume)) {
                     game.menu = false
@@ -34,6 +44,12 @@ class SceneBattle {
                     game.scene = new SceneTitle(game)
                 }
             }
+        }
+    }
+
+    mouseUpStart(game, pos) {
+        if (Func.pointInsideRectUI(pos, UI.window.buttonOK)) {
+            game.state = ''
         }
     }
 }

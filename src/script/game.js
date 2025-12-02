@@ -1,5 +1,6 @@
 class Game {
     constructor() {
+        Data.loadData()
         this.state = ''
         this.menu = false
 
