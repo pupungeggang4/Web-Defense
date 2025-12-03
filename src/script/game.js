@@ -10,8 +10,6 @@ class Game {
 
         this.canvas.addEventListener('mouseup', (event) => this.mouseUp(event), false)
         this.frameCurrent = 0; this.framePrevious = 0; this.delta = 0;
-
-        this.field = new Field()
     }
 
     run() {
@@ -23,7 +21,7 @@ class Game {
     loop() {
         this.frameCurrent = performance.now()
         this.delta = this.frameCurrent - this.framePrevious
-        this.framePreivous = this.frameCurrent
+        this.framePrevious = this.frameCurrent
 
         this.scene.loop(this)
         this.gameLoop = requestAnimationFrame(() => this.loop())

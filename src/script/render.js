@@ -19,13 +19,25 @@ class Render {
         Render.fillTextUI(ctx, 'OK', UI.window.textOK)
     }
 
+    static renderUpperUI(ctx, game) {
+        Render.fillTextUI(ctx, `Floor 1, Wave 1/5`, UI.battle.textLevel)
+        Render.strokeRectUI(ctx, UI.battle.waveProgress)
+    }
+
     static renderLowerUI(ctx, game) {
-        Render.fillTextUI(ctx, 'Lv.1', UI.battle.textLevel)
+        let player = game.player
+        Render.fillTextUI(ctx, `Lv.${game.player.genLevel}`, UI.battle.textGenLevel)
         Render.drawImageUI(ctx, Img.iconenergy, UI.battle.iconEnergy)
-        Render.fillTextUI(ctx, '0.0/0.0', UI.battle.textEnergy)
+        Render.fillTextUI(ctx, `${game.player.energy.toFixed(1)}/${game.player.energyMax}`, UI.battle.textEnergy)
         Render.drawImageUI(ctx, Img.iconlife, UI.battle.iconLife)
-        Render.fillTextUI(ctx, '20', UI.battle.textLife)
+        Render.fillTextUI(ctx, `${game.player.life}/${game.player.lifeMax}`, UI.battle.textLife)
         Render.strokeRectUI(ctx, UI.battle.buttonUpgrade)
+        Render.drawImageSizeUI(ctx, Img.buttonUpgrade, UI.battle.buttonUpgrade)
+        if (game.player.genLevel < game.player.genLevelMax) {
+            Render.fillTextUI(ctx, game.player.energyUpgrade, UI.battle.textUpgrade)
+        } else {
+            Render.fillTextUI(ctx, 'Max', UI.battle.textUpgrade)
+        }
         for (let i = 0; i < 6; i++) {
             let rect = [UI.battle.cardStart[0] + UI.battle.cardInterval[0] * i, UI.battle.cardStart[1], UI.battle.cardSize[0], UI.battle.cardSize[1]]
             Render.strokeRectUI(ctx, rect)

@@ -17,7 +17,9 @@ class UI {
 
     static battle = {
         buttonMenu: [1180, 20, 80, 80],
-        textLevel: [24, 544],
+        textLevel: [164, 64],
+        waveProgress: [480, 80, 320, 20],
+        textGenLevel: [24, 544],
         iconEnergy: [160, 540],
         textEnergy: [204, 544],
         iconLife: [400, 540],

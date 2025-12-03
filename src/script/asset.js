@@ -4,7 +4,11 @@ class Img {
         ['tempproj', 'image/tempproj.png', ''],
         ['temptile', 'image/temptile.png', ''],
         ['iconlife', 'image/iconlife.png', ''],
-        ['iconenergy', 'image/iconenergy.png', '']
+        ['iconenergy', 'image/iconenergy.png', ''],
+        ['spawn', 'image/spawn.png', ''],
+        ['endpoint', 'image/endpoint.png', ''],
+        ['buttonUpgrade', 'image/buttonupgrade.png', ''],
+        ['buttonPause', 'image/buttonpause.png', '']
     ]
     static card = {}
 }

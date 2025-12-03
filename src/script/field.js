@@ -1,10 +1,21 @@
 class Field {
     constructor() {
         this.canvas = Img.temptile
+        this.endpoint = []
+        this.spawn = []
+
+        for (let i = 0; i < 4; i++) {
+            let endpoint = new Endpoint()
+            endpoint.rect.pos = new Vec2(90, 170 + 100 * i)
+            this.endpoint.push(endpoint)
+            let spawn = new Spawn()
+            spawn.rect.pos = new Vec2(1190, 170 + 100 * i)
+            this.spawn.push(spawn)
+        }
     }
 
     render(game) {
-        let fieldStart = [120, 120]
+        let fieldStart = [140, 120]
         let fieldSize = [100, 100]
         let tileSize = [80, 80]
         let ctx = game.ctx
@@ -18,6 +29,11 @@ class Field {
                 }
                 Render.strokeRectUI(ctx, rect)
             }
+        }
+
+        for (let i = 0; i < 4; i++) {
+            this.spawn[i].render(game)
+            this.endpoint[i].render(game)
         }
     }
 }
