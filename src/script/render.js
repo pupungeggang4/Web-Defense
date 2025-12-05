@@ -20,7 +20,11 @@ class Render {
     }
 
     static renderUpperUI(ctx, game) {
-        Render.fillTextUI(ctx, `Floor 1, Wave 1/5`, UI.battle.textLevel)
+        let player = game.player
+        Render.fillTextUI(ctx, `Lv.${player.level}`, UI.battle.textLevel)
+        Render.strokeRectUI(ctx, UI.battle.expBar)
+        Render.fillTextUI(ctx, `Gold: ${player.gold}`, UI.battle.textGold)
+        Render.fillTextUI(ctx, `Floor 1, Wave 1/5`, UI.battle.textWave)
         Render.strokeRectUI(ctx, UI.battle.waveProgress)
     }
 
@@ -43,6 +47,10 @@ class Render {
             player.hand[i].render(game)
             Render.strokeRectUI(ctx, rect)
         }
+        Render.strokeRectUI(ctx, UI.battle.deck)
+        Render.fillTextUI(ctx, player.deck.length, UI.battle.textDeck)
+        Render.strokeRectUI(ctx, UI.battle.discarded)
+        Render.fillTextUI(ctx, player.discarded.length, UI.battle.textDiscarded)
     }
 
     static renderMenu(ctx) {

@@ -13,6 +13,10 @@ class Player {
         this.hand = [new CardHandler(0), new CardHandler(1), new CardHandler(2), new CardHandler(3), new CardHandler(4), new CardHandler(5)]
         this.discarded = []
 
+        this.level = 0
+        this.gold = 50
+        this.exp = 0
+        this.expMax = 20
         this.deckOriginal = []
         this.equipment = []
 

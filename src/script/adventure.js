@@ -1,0 +1,5 @@
+class Adventure {
+    constructor() {
+
+    }
+}

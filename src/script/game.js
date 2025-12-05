@@ -13,6 +13,7 @@ class Game {
 
         this.field = new Field()
         this.player = new Player()
+        this.adventure = new Adventure()
     }
 
     run() {
