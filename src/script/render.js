@@ -51,6 +51,7 @@ class Render {
         Render.fillTextUI(ctx, player.deck.length, UI.battle.textDeck)
         Render.strokeRectUI(ctx, UI.battle.discarded)
         Render.fillTextUI(ctx, player.discarded.length, UI.battle.textDiscarded)
+        Render.strokeRectUI(ctx, UI.battle.buttonReturn)
     }
 
     static renderMenu(ctx) {

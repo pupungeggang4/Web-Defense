@@ -36,7 +36,8 @@ class UI {
         deck: [900, 580, 120, 120],
         textDeck: [904, 584],
         discarded: [1020, 580, 120, 120],
-        textDiscarded: [1024, 584]
+        textDiscarded: [1024, 584],
+        buttonReturn: [1140, 580, 120, 120]
     }
 
     static card = {
