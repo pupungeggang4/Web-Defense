@@ -8,10 +8,24 @@ class Player {
         this.energyMax = 6
         this.life = 20
         this.lifeMax = 20
+
+        this.deck = [new Card(), new Card(), new Card(), new Card(), new Card()]
+        this.hand = [new CardHandler(0), new CardHandler(1), new CardHandler(2), new CardHandler(3), new CardHandler(4), new CardHandler(5)]
+        this.discarded = []
+
+        this.deckOriginal = []
+        this.equipment = []
+
+        for (let i = 0; i < this.deck.length; i++) {
+            this.deck[i].setData(1)
+        }
     }
 
     handleTick(game) {
         this.energyGen(game)
+        for (let i = 0; i < 6; i++) {
+            this.hand[i].handleTick(game)
+        }
     }
 
     energyGen(game) {

@@ -8,7 +8,8 @@ class Img {
         ['spawn', 'image/spawn.png', ''],
         ['endpoint', 'image/endpoint.png', ''],
         ['buttonUpgrade', 'image/buttonupgrade.png', ''],
-        ['buttonPause', 'image/buttonpause.png', '']
+        ['buttonPause', 'image/buttonpause.png', ''],
+        [1, 'image/card/card001.png', 'card']
     ]
     static card = {}
 }

@@ -1,4 +1,4 @@
-class Tower extends Entity {
+class Tower extends Unit {
     constructor() {
         super()
     }

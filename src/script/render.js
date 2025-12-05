@@ -40,6 +40,7 @@ class Render {
         }
         for (let i = 0; i < 6; i++) {
             let rect = [UI.battle.cardStart[0] + UI.battle.cardInterval[0] * i, UI.battle.cardStart[1], UI.battle.cardSize[0], UI.battle.cardSize[1]]
+            player.hand[i].render(game)
             Render.strokeRectUI(ctx, rect)
         }
     }

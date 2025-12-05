@@ -24,6 +24,7 @@ class SceneTitle {
         if (Func.pointInsideRectUI(pos, UI.title.buttonStart)) {
             game.scene = new SceneBattle(game)
             game.state = 'start'
+
         }
         if (Func.pointInsideRectUI(pos, UI.title.buttonCollection)) {
             game.scene = new SceneCollection(game)

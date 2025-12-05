@@ -32,6 +32,10 @@ class UI {
         cardInterval: [120, 120],
     }
 
+    static card = {
+        textEnergy: [4, 4],
+    }
+
     static menu = {
         rect: [320, 240, 640, 240],
         textPaused: [340, 260],
