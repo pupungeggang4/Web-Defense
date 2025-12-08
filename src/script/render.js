@@ -15,6 +15,9 @@ class Render {
         ctx.fillStyle = 'black'
 
         Render.fillTextUI(ctx, 'Choose start deck', UI.window.textTitle)
+        for (let i = 0; i < 3; i++) {
+            Render.strokeRectUI(ctx, UI.window.buttonItem[i])
+        }
         Render.strokeRectUI(ctx, UI.window.buttonOK)
         Render.fillTextUI(ctx, 'OK', UI.window.textOK)
     }

@@ -1,17 +1,36 @@
 class Card {
     constructor() {
+        this.ID = 0
         this.energy = 0
         this.element = ''
         this.rarity = ''
         this.name = ''
         this.stat = [0, 0, 0]
         this.attackID = 0
-        this.description = ''
         this.canvas = null
     }
 
     setData(ID) {
+        let data = JSON.parse(JSON.stringify(Data.card[ID]))
         this.canvas = Img.card[ID]
+        this.ID = ID
+        this.energy = data['energy']
+        this.element = data['element']
+        this.rarity = data['rarity']
+        this.stat = data['stat']
+        this.attackID = data['attackID']
+    }
+
+    clone() {
+        let card = new Card()
+        card.canvas = Img.card[this.ID]
+        card.ID = this.ID
+        card.energy = this.energy
+        card.element = this.element
+        card.rarity = this.rarity
+        card.stat = JSON.parse(JSON.stringify(this.stat))
+        card.attackID = this.attackID
+        return card
     }
 
     render(game) {

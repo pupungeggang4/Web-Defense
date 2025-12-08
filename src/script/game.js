@@ -11,6 +11,8 @@ class Game {
         this.canvas.addEventListener('mouseup', (event) => this.mouseUp(event), false)
         this.frameCurrent = 0; this.framePrevious = 0; this.delta = 0;
 
+        this.selectedAdventureStart = -1
+        this.battle = new Battle()
         this.field = new Field()
         this.player = new Player()
         this.adventure = new Adventure()

@@ -10,7 +10,7 @@ class UI {
     static window = {
         rect: [160, 40, 960, 640],
         textTitle: [180, 60],
-        buttonItem: [],
+        buttonItem: [[200, 120, 200, 200], [540, 120, 200, 200], [880, 120, 200, 200]],
         buttonOK: [560, 560, 160, 80],
         textOK: [580, 580]
     }

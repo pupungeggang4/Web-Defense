@@ -3,6 +3,18 @@ class SceneBattle {
         game.menu = false
         game.field = new Field()
         game.player = new Player()
+        game.battle = new Battle()
+        game.adventure = new Adventure()
+
+        game.battle.level = 'plains'
+        game.adventure.rewardPool = []
+        let tempPool = Object.keys(Data.deck)
+        for (let i = 0; i < 3; i++) {
+            let index = Math.floor(Math.random() * tempPool.length)
+            game.adventure.rewardPool.push(tempPool.splice(index, 1)[0])
+        }
+
+        game.selectedAdventureStart = -1
     }
 
     loop(game) {
@@ -58,8 +70,17 @@ class SceneBattle {
     }
 
     mouseUpStart(game, pos) {
+        for (let i = 0; i < 3; i++) {
+            if (Func.pointInsideRectUI(pos, UI.window.buttonItem[i])) {
+                game.selectedAdventureStart = i
+            }
+        }
         if (Func.pointInsideRectUI(pos, UI.window.buttonOK)) {
-            game.state = 'battle'
+            if (game.selectedAdventureStart != -1) {
+                game.player.startAdventure(game.adventure.rewardPool[game.selectedAdventureStart])
+                game.player.startBattle()
+                game.state = 'battle'
+            }
         }
     }
 

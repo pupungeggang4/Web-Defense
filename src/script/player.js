@@ -9,7 +9,7 @@ class Player {
         this.life = 20
         this.lifeMax = 20
 
-        this.deck = [new Card(), new Card(), new Card(), new Card(), new Card()]
+        this.deck = []
         this.hand = [new CardHandler(0), new CardHandler(1), new CardHandler(2), new CardHandler(3), new CardHandler(4), new CardHandler(5)]
         this.discarded = []
 
@@ -46,6 +46,39 @@ class Player {
             this.energyUpgrade += 2
             this.energyMax += 2
             this.energyGenSpeed += 0.1
+        }
+    }
+
+    startAdventure(deckID) {
+        this.level = 0
+        this.gold = 50
+        this.exp = 0
+        this.expMax = 20
+        this.deckOriginal = []
+
+        let data = JSON.parse(JSON.stringify(Data.deck[deckID]))
+        console.log(data)
+        for (let i = 0; i < data['card'].length; i++) {
+            let card = new Card()
+            card.setData(data['card'][i])
+            this.deckOriginal.push(card)
+        }
+    }
+
+    startBattle() {
+        this.genLevel = 1
+        this.genLevelMax = 5
+        this.energyUpgrade = 5
+        this.energyGenSpeed = 1
+        this.energy = 2
+        this.energyMax = 6
+        this.life = 20
+        this.lifeMax = 20
+        this.deck = []
+        this.hand = [new CardHandler(0), new CardHandler(1), new CardHandler(2), new CardHandler(3), new CardHandler(4), new CardHandler(5)]
+
+        for (let i = 0; i < this.deckOriginal.length; i++) {
+            this.deck.push(this.deckOriginal[i].clone())
         }
     }
 }

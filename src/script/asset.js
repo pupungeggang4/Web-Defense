@@ -9,7 +9,9 @@ class Img {
         ['endpoint', 'image/endpoint.png', ''],
         ['buttonUpgrade', 'image/buttonupgrade.png', ''],
         ['buttonPause', 'image/buttonpause.png', ''],
-        [1, 'image/card/card001.png', 'card']
+        [1, 'image/card/card001.png', 'card'],
+        [2, 'image/card/card002.png', 'card'],
+        [3, 'image/card/card003.png', 'card'],
     ]
     static card = {}
 }
