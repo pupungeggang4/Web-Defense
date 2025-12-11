@@ -1,3 +1,5 @@
 dataUnit = {
-
+    1001: {"ID": 1001, "name": "unit 1", "stat": [3, 1, 30], "speed": 20, "weapon": ["melee_overlap"]},
+    1002: {"ID": 1002, "name": "unit 2", "stat": [3, 1, 30], "speed": 20, "weapon": ["melee_overlap"]},
+    1003: {"ID": 1003, "name": "unit 3", "stat": [3, 1, 30], "speed": 40, "weapon": ["melee_overlap"]}
 }

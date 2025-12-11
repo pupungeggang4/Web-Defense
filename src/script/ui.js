@@ -33,9 +33,9 @@ class UI {
         cardText: [164, 584],
         cardSize: [120, 120],
         cardInterval: [120, 120],
-        deck: [900, 580, 120, 120],
+        buttonDeck: [900, 580, 120, 120],
         textDeck: [904, 584],
-        discarded: [1020, 580, 120, 120],
+        buttonDiscarded: [1020, 580, 120, 120],
         textDiscarded: [1024, 584],
         buttonReturn: [1140, 580, 120, 120]
     }

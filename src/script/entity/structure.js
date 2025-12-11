@@ -1,4 +1,4 @@
-class Projectile extends Entity {
+class Structure extends Unit {
     constructor() {
         super()
     }

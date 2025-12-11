@@ -5,8 +5,9 @@ class Card {
         this.element = ''
         this.rarity = ''
         this.name = ''
+        this.type = ''
         this.stat = [0, 0, 0]
-        this.attackID = 0
+        this.weapon = []
         this.canvas = null
     }
 
@@ -17,8 +18,10 @@ class Card {
         this.energy = data['energy']
         this.element = data['element']
         this.rarity = data['rarity']
+        this.name = data['name']
+        this.type = data['type']
         this.stat = data['stat']
-        this.attackID = data['attackID']
+        this.weapon = data['weapon']
     }
 
     clone() {
@@ -28,9 +31,24 @@ class Card {
         card.energy = this.energy
         card.element = this.element
         card.rarity = this.rarity
+        card.name = this.name
+        card.type = this.type
         card.stat = JSON.parse(JSON.stringify(this.stat))
-        card.attackID = this.attackID
+        card.weapon = JSON.parse(JSON.stringify(this.weapon))
         return card
+    }
+
+    toTower() {
+        let tower = new Tower()
+        tower.canvas = Img.card[this.ID]
+        tower.hp = this.stat[2]
+        tower.hpMax = this.stat[2]
+        tower.attack = this.stat[0]
+        tower.attackSpeed = this.stat[1]
+        tower.attackCool = 1 / this.stat[1]
+        tower.attackCoolLeft = tower.attackCool
+        tower.weapon = JSON.parse(JSON.stringify(this.weapon))
+        return tower
     }
 
     render(game) {

@@ -50,10 +50,13 @@ class Render {
             player.hand[i].render(game)
             Render.strokeRectUI(ctx, rect)
         }
-        Render.strokeRectUI(ctx, UI.battle.deck)
+        Render.drawImageUI(ctx, Img.buttonDeck, UI.battle.buttonDeck)
+        Render.strokeRectUI(ctx, UI.battle.buttonDeck)
         Render.fillTextUI(ctx, player.deck.length, UI.battle.textDeck)
-        Render.strokeRectUI(ctx, UI.battle.discarded)
+        Render.drawImageUI(ctx, Img.buttonDiscarded, UI.battle.buttonDiscarded)
+        Render.strokeRectUI(ctx, UI.battle.buttonDiscarded)
         Render.fillTextUI(ctx, player.discarded.length, UI.battle.textDiscarded)
+        Render.drawImageUI(ctx, Img.buttonReturn, UI.battle.buttonReturn)
         Render.strokeRectUI(ctx, UI.battle.buttonReturn)
     }
 

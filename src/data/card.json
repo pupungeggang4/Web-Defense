@@ -1,5 +1,5 @@
 dataCard = {
-    1: {"ID": 1, "name": "card", "element": "normal", "rarity": "basic", "energy": 3, "stat": [5, 1, 30], "weapon": 1, "effect": []},
-    2: {"ID": 2, "name": "card", "element": "normal", "rarity": "basic", "energy": 4, "stat": [5, 1, 60], "weapon": 1, "effect": []},
-    3: {"ID": 3, "name": "card", "element": "normal", "rarity": "basic", "energy": 5, "stat": [5, 1, 90], "weapon": 1, "effect": []}
+    1: {"ID": 1, "name": "card", "element": "normal", "type": "tower", "rarity": "basic", "energy": 3, "stat": [5, 1, 30], "weapon": ["bullet1"], "effect": []},
+    2: {"ID": 2, "name": "card", "element": "normal", "type": "tower", "rarity": "basic", "energy": 4, "stat": [5, 1, 60], "weapon": ["bullet1"], "effect": []},
+    3: {"ID": 3, "name": "card", "element": "normal", "type": "tower", "rarity": "basic", "energy": 5, "stat": [5, 1, 90], "weapon": ["melee", [50, 0, 100, 20]], "effect": []}
 }

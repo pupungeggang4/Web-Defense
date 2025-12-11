@@ -49,6 +49,32 @@ class Player {
         }
     }
 
+    playCard(game, index, row, col) {
+        let unitList = game.field.unitList
+        let tileLayout = game.field.tileLayout
+
+        if (this.hand[index].card != null) {
+            let card = this.hand[index].card
+            if (this.energy >= card.energy) {
+                if (card.type === 'tower') {
+                    if (tileLayout[row][col] === null) {
+                        let tower = card.toTower()
+                        tower.fieldPos = [row, col]
+                        let center = game.field.findTileCenter(row, col)
+                        tower.rect = new Rect2(center.x, center.y, 80, 80)
+                        tower.side = 0
+
+                        unitList.push(tower)
+                        tileLayout[row][col] = tower
+                        
+                        this.hand[index].card = null
+                        this.energy -= card.energy
+                    }
+                }
+            }
+        }
+    }
+
     startAdventure(deckID) {
         this.level = 0
         this.gold = 50

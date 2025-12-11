@@ -3,6 +3,14 @@ class Field {
         this.canvas = Img.temptile
         this.endpoint = []
         this.spawn = []
+        this.tileLayout = [
+            [null, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null, null],
+            [null, null, null, null, null, null, null, null, null, null]
+        ]
+        this.unitList = []
+        this.projectileList = []
 
         for (let i = 0; i < 4; i++) {
             let endpoint = new Endpoint()
@@ -12,6 +20,14 @@ class Field {
             spawn.rect.pos = new Vec2(1190, 170 + 100 * i)
             this.spawn.push(spawn)
         }
+    }
+
+    findTileCenter(row, col) {
+        return new Vec2(190 + col * 100, 170 + row * 100)
+    }
+
+    handleTick(game) {
+
     }
 
     render(game) {
@@ -34,6 +50,10 @@ class Field {
         for (let i = 0; i < 4; i++) {
             this.spawn[i].render(game)
             this.endpoint[i].render(game)
+        }
+
+        for (let i = 0; i < this.unitList.length; i++) {
+            this.unitList[i].render(game)
         }
     }
 }
