@@ -2,6 +2,7 @@ class Game {
     constructor() {
         Data.loadData()
         this.state = ''
+        this.stateClick = ''
         this.menu = false
 
         this.canvas = document.getElementById('screen')
@@ -12,6 +13,9 @@ class Game {
         this.frameCurrent = 0; this.framePrevious = 0; this.delta = 0;
 
         this.selectedAdventureStart = -1
+        this.selectedCard = -1
+        this.selectedField = [-1, -1]
+
         this.battle = new Battle()
         this.field = new Field()
         this.player = new Player()

@@ -83,7 +83,7 @@ class Player {
         this.deckOriginal = []
 
         let data = JSON.parse(JSON.stringify(Data.deck[deckID]))
-        console.log(data)
+
         for (let i = 0; i < data['card'].length; i++) {
             let card = new Card()
             card.setData(data['card'][i])

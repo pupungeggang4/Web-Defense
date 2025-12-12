@@ -3,7 +3,7 @@ class Card {
         this.ID = 0
         this.energy = 0
         this.element = ''
-        this.rarity = ''
+        this.rarity = 0
         this.name = ''
         this.type = ''
         this.stat = [0, 0, 0]
@@ -26,13 +26,13 @@ class Card {
 
     clone() {
         let card = new Card()
-        card.canvas = Img.card[this.ID]
         card.ID = this.ID
-        card.energy = this.energy
+        card.canvas = Img.card[this.ID]
         card.element = this.element
         card.rarity = this.rarity
         card.name = this.name
         card.type = this.type
+        card.energy = this.energy
         card.stat = JSON.parse(JSON.stringify(this.stat))
         card.weapon = JSON.parse(JSON.stringify(this.weapon))
         return card
@@ -40,7 +40,9 @@ class Card {
 
     toTower() {
         let tower = new Tower()
+        tower.ID = this.ID
         tower.canvas = Img.card[this.ID]
+        tower.energy = this.energy
         tower.hp = this.stat[2]
         tower.hpMax = this.stat[2]
         tower.attack = this.stat[0]

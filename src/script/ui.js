@@ -37,7 +37,10 @@ class UI {
         textDeck: [904, 584],
         buttonDiscarded: [1020, 580, 120, 120],
         textDiscarded: [1024, 584],
-        buttonReturn: [1140, 580, 120, 120]
+        buttonReturn: [1140, 580, 120, 120],
+        fieldStart: [140, 120],
+        fieldCellSize: [100, 100],
+        fieldArea: [140, 120, 1000, 400]
     }
 
     static card = {

@@ -14,10 +14,10 @@ class Field {
 
         for (let i = 0; i < 4; i++) {
             let endpoint = new Endpoint()
-            endpoint.rect.pos = new Vec2(90, 170 + 100 * i)
+            endpoint.rect.pos = new Vec2(90, 170 + UI.battle.fieldCellSize[1] * i)
             this.endpoint.push(endpoint)
             let spawn = new Spawn()
-            spawn.rect.pos = new Vec2(1190, 170 + 100 * i)
+            spawn.rect.pos = new Vec2(1190, 170 + UI.battle.fieldCellSize[1] * i)
             this.spawn.push(spawn)
         }
     }
